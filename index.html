@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#05050a">
+<title>Música e Voz Sintetizadas — Sistemas Multimídia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="light" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="#inicio" aria-label="SinteSom, início"><svg viewBox="0 0 32 20" width="28" height="18" aria-hidden="true"><path d="M1 10h4l3-8 4 16 4-14 3 10 3-4h9" stroke="#8ea2ff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>SinteSom</span></a>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav aria-label="Seções">
+      <a href="#inicio">Início</a><a href="#som-digital">Som digital</a><a href="#sintese">Música</a><a href="#midi">MIDI</a><a href="#voz">Voz</a><a href="#aplicacoes">Aplicações</a><a href="#galeria">Mídias</a><a href="#quiz">Quiz</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section id="inicio" class="hero">
+  <div class="wrap hero-c">
+    <h1><span class="h-a">Música e Voz</span><span class="h-b">Sintetizadas</span></h1>
+    <p class="h-c">para sistemas multimídia</p>
+    <p class="h-p"><span class="sr">Transformando som em informação, e informação em música e voz.</span><span id="type" data-t="Transformando som em informação, e informação em música e voz." aria-hidden="true"></span><i class="caret" aria-hidden="true"></i></p>
+  </div>
+  <div class="divider" aria-hidden="true">
+    <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b6dff" stop-opacity=".55"/><stop offset="1" stop-color="#5b6dff" stop-opacity="0"/></linearGradient></defs></svg>
+    <svg class="wv w3" viewBox="0 0 2880 200" preserveAspectRatio="none"><path class="wf" d="M0 120Q360 30 720 120T1440 120Q1800 30 2160 120T2880 120V200H0Z"/><path class="wl" d="M0 120Q360 30 720 120T1440 120Q1800 30 2160 120T2880 120"/></svg><svg class="wv w2" viewBox="0 0 2880 200" preserveAspectRatio="none"><path class="wf" d="M0 130Q120 80 240 130T480 130Q600 80 720 130T960 130Q1080 80 1200 130T1440 130Q1560 80 1680 130T1920 130Q2040 80 2160 130T2400 130Q2520 80 2640 130T2880 130V200H0Z"/><path class="wl" d="M0 130Q120 80 240 130T480 130Q600 80 720 130T960 130Q1080 80 1200 130T1440 130Q1560 80 1680 130T1920 130Q2040 80 2160 130T2400 130Q2520 80 2640 130T2880 130"/></svg><svg class="wv w1" viewBox="0 0 2880 200" preserveAspectRatio="none"><path class="wf" d="M0 140Q180 80 360 140T720 140Q900 80 1080 140T1440 140Q1620 80 1800 140T2160 140Q2340 80 2520 140T2880 140V200H0Z"/><path class="wl" d="M0 140Q180 80 360 140T720 140Q900 80 1080 140T1440 140Q1620 80 1800 140T2160 140Q2340 80 2520 140T2880 140"/></svg>
+  </div>
+</section>
+
+<section id="som-digital">
+  <div class="wrap">
+    <div class="ch" data-r><h2>Som digital</h2><i class="rule"></i></div>
+    <p class="lead">Para sintetizar música e voz, primeiro é preciso entender o som e como um computador o representa.</p>
+    <ul class="tags" aria-label="Conceitos deste capítulo"><li>Frequência</li><li>Amplitude</li><li>Período</li><li>Timbre</li><li>Amostragem</li><li>Quantização</li><li>Nyquist</li></ul>
+    <div class="prose">
+      <h3>O que é o som</h3>
+      <p>Som é uma vibração que se propaga pelo ar como uma <b>onda sonora</b>. Quatro características descrevem essa onda:</p>
+      <table><tr><th>Característica</th><th>O que é</th><th>Como percebemos</th></tr><tr><td>Frequência</td><td>Vibrações por segundo, em hertz (Hz)</td><td>Som grave ou agudo</td></tr><tr><td>Amplitude</td><td>Intensidade da vibração</td><td>Volume</td></tr><tr><td>Período</td><td>Duração de um ciclo: 1 ÷ frequência</td><td>Quanto mais agudo o som, menor o período</td></tr><tr><td>Timbre</td><td>Formato da onda, resultado de seus harmônicos</td><td>A &ldquo;cor&rdquo; do som</td></tr></table>
+      <p>Uma onda de 100 Hz tem período de 0,01 s, e a nota Lá, de 440 Hz, tem período de cerca de 0,0023 s.</p>
+    </div>
+    <figure class="slot" data-r data-media="animation" data-src="assets/animations/animacao-onda-sonora.mp4" data-caption="Animação (MP4): onda sonora em movimento."></figure>
+    <div class="prose">
+      <h3>Analógico e digital</h3>
+      <p>Um sinal <b>analógico</b> varia de forma contínua, com infinitos valores possíveis. Um sinal <b>digital</b> é uma sequência de números, e é isso que um computador consegue guardar. Ao gravar uma voz, o microfone transforma a vibração do ar em um sinal elétrico analógico, e um <b>conversor analógico-digital</b> o transforma em números em duas etapas: amostragem e quantização.</p>
+      <h3>Amostragem</h3>
+      <p>A onda é medida em instantes regulares. Cada medida é uma <b>amostra</b>, e o número de amostras por segundo é a <b>taxa de amostragem</b>, em Hz. Quanto mais amostras por segundo, mais fiel é a cópia da onda.</p>
+      <h3>Quantização</h3>
+      <p>Cada amostra é guardada como um número de tamanho fixo, medido em <b>bits</b> (a profundidade de bits). Com 1 bit existem 2 níveis de volume possíveis, com 8 bits existem 256 e com 16 bits, 65.536. Mais bits dão mais precisão e menos ruído.</p>
+      </div>
+    <div class="demo" data-r>
+      <div class="dh"><h3>Demonstração: amostragem e quantização</h3><p>Na demonstração, a linha fina e escura é a onda original, os pontos são as amostras e a linha clara e mais grossa é a onda reconstruída a partir delas. <b>Amostras por ciclo</b> controla a amostragem e <b>Bits</b> controla a quantização. As linhas horizontais mostram os níveis disponíveis (até 4 bits). Experimente 4 amostras e depois 1 bit.</p></div>
+      <svg id="samp" viewBox="0 0 900 260" role="img" aria-label="Onda original, amostras e onda reconstruída"></svg>
+      <div class="ctl">
+        <label>Amostras por ciclo <input id="sn" type="range" min="4" max="32" value="10"><output>10</output></label>
+        <label>Bits <input id="sb" type="range" min="1" max="6" value="3"><output>3</output></label>
+      </div>
+      <p class="cap" id="scap"></p>
+    </div>
+    <div class="prose">
+      <h3>O padrão do CD</h3>
+    </div>
+    <dl class="facts">
+      <div data-r><dt><span data-count="44.1" data-dec="1">0</span> kHz</dt><dd>taxa de amostragem: 44.100 medidas por segundo</dd></div>
+      <div data-r><dt><span data-count="16">0</span> bits</dt><dd>profundidade de cada amostra: 65.536 níveis de volume</dd></div>
+      <div data-r><dt><span data-count="2">0</span> ×</dt><dd>a taxa deve ser pelo menos o dobro da maior frequência: é o mínimo exigido pelo teorema de Nyquist</dd></div>
+    </dl>
+    <div class="prose">
+      <h3>Teorema de Nyquist</h3>
+      <p>Para reproduzir bem uma frequência, é preciso amostrar pelo menos o dobro dela. O ouvido humano chega a cerca de 20 kHz, então são necessárias mais de 40 mil amostras por segundo, e o CD usa 44,1 kHz para ter uma folga. Com uma taxa menor, as frequências altas se confundem com outras e o som fica distorcido.</p>
+      <h3>Qualidade do áudio</h3>
+      <p>A taxa de amostragem define quais frequências o áudio consegue guardar, e a profundidade de bits define a precisão do volume e o nível de ruído. Subir os dois melhora a fidelidade, mas aumenta o tamanho: um minuto de áudio de CD sem compressão (44.100 amostras × 16 bits × 2 canais) ocupa cerca de 10 MB. Por isso existem formatos que reduzem o tamanho.</p>
+      <table><tr><th>Formato</th><th>Compressão</th><th>Característica</th></tr><tr><td>WAV</td><td>Nenhuma</td><td>Guarda todas as amostras; arquivo grande</td></tr><tr><td>FLAC</td><td>Sem perda</td><td>Menor que o WAV e com o mesmo som</td></tr><tr><td>MP3, OGG</td><td>Com perda</td><td>Descartam detalhes pouco audíveis; arquivos bem menores</td></tr></table>
+    </div>
+  </div>
+</section>
+
+<section id="sintese">
+  <div class="wrap">
+    <div class="ch" data-r><h2>Música sintetizada</h2><i class="rule"></i></div>
+    <p class="lead">Um sintetizador cria som do zero. Tudo começa pela forma da onda.</p>
+    <ul class="tags" aria-label="Conceitos deste capítulo"><li>Oscilador</li><li>Harmônicos</li><li>Filtro</li><li>ADSR</li><li>Aditiva</li><li>Subtrativa</li><li>FM</li><li>Wavetable</li></ul>
+    <div class="prose">
+      <h3>O que é síntese sonora</h3>
+      <p>Síntese sonora é criar um som por cálculo ou por circuitos eletrônicos, em vez de gravá-lo. O <b>sintetizador</b> é o aparelho ou o programa que faz isso: pode ser um teclado com painel de controles ou um <b>instrumento virtual</b>, que roda no computador.</p>
+      <h3>Como um sintetizador gera um som</h3>
+      <p>Ao apertar uma tecla, o sintetizador define a <b>frequência</b> da nota e dispara um <b>oscilador</b>, que gera uma onda repetida nessa frequência. A <b>amplitude</b> da onda define o volume, e o <b>formato</b> dela define o timbre. Depois, um <b>filtro</b> e um <b>envelope</b> refinam o resultado.</p>
+    </div>
+    <figure class="slot" data-r data-media="raster" data-src="assets/images/raster/foto-grupo.jpeg" data-alt="Integrantes do grupo reunidos em volta de um notebook, em sala de aula, trabalhando no projeto" data-caption="Imagem raster: fotografia do grupo realizando o trabalho."></figure>
+    <div class="prose">
+      <h3>Formas de onda</h3>
+      <p>Toda onda complexa é uma soma de senoides, chamadas <b>harmônicos</b>, com frequências múltiplas da frequência fundamental. Cada forma de onda tem uma combinação diferente deles.</p>
+    </div>
+    <div class="shapes">
+      <figure data-r><svg class="draw" viewBox="0 0 600 80" preserveAspectRatio="none"><path pathLength="1" vector-effect="non-scaling-stroke" d="M0 40C25 -10 50 -10 75 40S125 90 150 40 200 -10 225 40s50 50 75 0 50-50 75 0 50 50 75 0 50-50 75 0 50 50 75 0"/></svg><figcaption><b>Senoidal.</b> O som mais puro: uma só frequência, sem harmônicos.</figcaption></figure>
+      <figure data-r><svg class="draw" viewBox="0 0 600 80" preserveAspectRatio="none"><path pathLength="1" vector-effect="non-scaling-stroke" d="M0 68V12H75V68H150V12H225V68H300V12H375V68H450V12H525V68H600"/></svg><figcaption><b>Quadrada.</b> Som oco e &ldquo;eletrônico&rdquo;, com apenas os harmônicos ímpares.</figcaption></figure>
+      <figure data-r><svg class="draw" viewBox="0 0 600 80" preserveAspectRatio="none"><path pathLength="1" vector-effect="non-scaling-stroke" d="M0 68L100 12V68L200 12V68L300 12V68L400 12V68L500 12V68L600 12"/></svg><figcaption><b>Dente de serra.</b> Som brilhante, com todos os harmônicos.</figcaption></figure>
+    </div>
+    <div class="prose">
+      <h3>Do oscilador ao som</h3>
+      <ol class="chain">
+        <li><b>Oscilador</b><span>gera a forma de onda na frequência da nota</span></li>
+        <li><b>Filtro</b><span>remove parte das frequências e muda o brilho do timbre</span></li>
+        <li><b>Envelope</b><span>controla como o volume muda ao longo da nota</span></li>
+        <li><b>Som</b><span>o sinal final vai para o alto-falante</span></li>
+      </ol>
+      <p>O envelope mais comum é o <b>ADSR</b>, com quatro fases:</p>
+      <table><tr><th>Fase</th><th>O que controla</th></tr><tr><td>Attack</td><td>Quanto tempo o volume leva para chegar ao máximo</td></tr><tr><td>Decay</td><td>Quanto tempo ele leva para cair até o nível de sustentação</td></tr><tr><td>Sustain</td><td>O nível mantido enquanto a tecla continua pressionada</td></tr><tr><td>Release</td><td>Como o volume desaparece depois que a tecla é solta</td></tr></table>
+    </div>
+    <figure class="slot" data-r data-media="vector" data-src="assets/images/vector/onda-sonora.svg" data-alt="Desenho vetorial de uma onda sonora" data-caption="Imagem vetorial (SVG): representação de uma onda sonora."></figure>
+    <div class="prose">
+      <h3>Técnicas de síntese</h3>
+      <div class="techs"><div class="tabs" role="tablist"><button class="on" data-t="t1">Subtrativa</button><button data-t="t2">Aditiva</button><button data-t="t3">FM</button><button data-t="t4">Wavetable</button></div>
+      <div class="panel on" id="t1"><p><b>O que é.</b> Síntese que parte de uma onda rica em harmônicos e remove frequências.</p><p><b>Como funciona.</b> Um oscilador gera uma onda como a dente de serra, e um filtro retira as frequências que não queremos até chegar ao timbre.</p><p><b>Onde é usada.</b> Nos sintetizadores analógicos clássicos, em baixos, solos e texturas, e em muitos instrumentos virtuais.</p></div>
+      <div class="panel" id="t2"><p><b>O que é.</b> Síntese que constrói o timbre somando senoides.</p><p><b>Como funciona.</b> Cada harmônico é uma senoide, e o sintetizador ajusta o volume de cada uma antes de somá-las.</p><p><b>Onde é usada.</b> Em órgãos eletrônicos e em timbres que exigem controle detalhado dos harmônicos.</p></div>
+      <div class="panel" id="t3"><p><b>O que é.</b> Síntese por modulação de frequência (FM).</p><p><b>Como funciona.</b> Um oscilador, o modulador, faz a frequência de outro, a portadora, variar muito rápido, o que cria harmônicos novos.</p><p><b>Onde é usada.</b> Em pianos elétricos, sinos e sons metálicos, e em chips de som de computadores e consoles dos anos 1980 e 1990.</p></div>
+      <div class="panel" id="t4"><p><b>O que é.</b> Síntese que usa uma tabela (<i>wavetable</i>) de formas de onda prontas.</p><p><b>Como funciona.</b> O oscilador percorre a tabela durante a nota, passando de uma forma de onda para outra, de modo que o timbre muda enquanto o som toca.</p><p><b>Onde é usada.</b> Em sintetizadores modernos e instrumentos virtuais, em sons que evoluem, como texturas e atmosferas.</p></div></div>
+    </div>
+    <div class="prose">
+      <h3>Exemplo prático: música modificada</h3>
+      <p>Um trecho de uma música foi utilizado como base para uma experiência de edição e produção musical. O grupo realizou alterações no material original e adicionou um beat produzido durante o desenvolvimento do projeto, gerando uma nova versão curta para demonstração.</p>
+    </div>
+    <figure class="ex" data-r><audio controls preload="metadata" src="assets/audio/in-the-end-trecho-editado.mp3">Seu navegador não reproduz áudio.</audio><figcaption>Áudio (MP3, cerca de 27 s): trecho de &ldquo;In the End&rdquo; usado como base, com alterações e um beat produzido pelo grupo. A música original é de terceiros.</figcaption></figure>
+  </div>
+</section>
+
+<section id="midi">
+  <div class="wrap">
+    <div class="ch" data-r><h2>MIDI</h2><i class="rule"></i></div>
+    <p class="lead">Um protocolo que descreve música em vez de gravá-la. MIDI não é áudio.</p>
+    <ul class="tags" aria-label="Conceitos deste capítulo"><li>MIDI</li><li>Note On</li><li>Note Off</li><li>Velocity</li><li>Canais</li><li>Hexadecimal</li></ul>
+    <ol class="steps">
+      <li class="step" data-r><span class="n">1</span><div><h3>O que é e para que serve</h3><p>MIDI (Musical Instrument Digital Interface) é um padrão para teclados, sintetizadores, computadores e programas musicais conversarem entre si. Ele serve para controlar um instrumento e para guardar uma música como uma sequência de instruções.</p></div></li>
+      <li class="step" data-r><span class="n">2</span><div><h3>Por que MIDI não é áudio</h3><p>MIDI <b>não contém som</b>: contém instruções, como qual nota tocar, quando começar, quanto durar e com que intensidade. Pense em uma partitura e em uma gravação: o MIDI é a partitura, e o áudio digital é a gravação.</p>
+        <table><tr><th></th><th>MIDI</th><th>Áudio digital</th></tr><tr><td>O que guarda</td><td>Instruções</td><td>Amostras do som</td></tr><tr><td>Tamanho</td><td>Muito pequeno</td><td>Grande</td></tr><tr><td>Timbre</td><td>Pode ser trocado</td><td>Fixo na gravação</td></tr><tr><td>Mesmo som em todo lugar</td><td>Não</td><td>Sim</td></tr></table></div></li>
+      <li class="step" data-r><span class="n">3</span><div><h3>Notas, duração, canais e intensidade</h3><p>Cada ação musical vira uma mensagem de poucos bytes. As <b>notas</b> vão de 0 a 127, e a nota 60 é o Dó central. Existem 16 <b>canais</b>, e cada um pode usar um instrumento diferente. A <b>velocity</b>, também de 0 a 127, mede a força com que a tecla foi apertada: quanto maior, mais forte o som. A <b>duração</b> de uma nota é o tempo entre duas mensagens: <b>Note On</b> (começar a nota) e <b>Note Off</b> (encerrá-la).</p></div></li>
+      <li class="step" data-r><span class="n">4</span><div><h3>Uma mensagem de exemplo</h3>
+        <div class="bytes" aria-label="Mensagem Note On: 90 3C 64"><span>90<small>Note On, canal 1</small></span><span>3C<small>nota 60, o Dó central</small></span><span>64<small>velocity 100</small></span></div></div></li>
+      <li class="step" data-r><span class="n">5</span><div><h3>Como ler essa mensagem</h3><p>Os valores estão em <b>hexadecimal</b>, um sistema com 16 símbolos (0 a 9 e A a F). No primeiro byte, o 9 significa Note On e o 0 indica o canal 1. O segundo, 3C, vale 3 × 16 + 12 = 60: a nota Dó central. O terceiro, 64, vale 6 × 16 + 4 = 100: a velocity. A mensagem diz &ldquo;toque o Dó central no canal 1, com força 100&rdquo;. Para encerrar a nota, o MIDI envia <b>80 3C 00</b>, um Note Off no mesmo canal. Assim, uma ação musical vira dados.</p></div></li>
+      <li class="step" data-r><span class="n">6</span><div><h3>MIDI, sintetizadores e instrumentos virtuais</h3><p>O MIDI só diz o que tocar. O som sai de um sintetizador ou de um instrumento virtual, que recebe as mensagens e gera a onda com as técnicas que você viu no capítulo anterior. Por isso a mesma música pode ser tocada como piano, flauta ou som sintetizado, só trocando o instrumento. Isso permite trilhas sonoras com poucos kilobytes, usadas em jogos e apresentações multimídia.</p>
+        <figure class="slot"None data-media="midi" data-src="assets/midi/beat.mid" data-caption="Música MIDI: beat de piano criado pelo grupo no BandLab."></figure></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="voz">
+  <div class="wrap">
+    <div class="ch" data-r><h2>Voz sintetizada</h2><i class="rule"></i></div>
+    <p class="lead">A síntese de fala (TTS, <i>text-to-speech</i>) transforma texto em voz. Escreva uma frase e ouça a máquina falar.</p>
+    <ul class="tags" aria-label="Conceitos deste capítulo"><li>TTS</li><li>Fonemas</li><li>Prosódia</li><li>Tom (pitch)</li><li>Neural</li></ul>
+    <div class="prose">
+      <h3>O que é síntese de voz</h3>
+      <p>Síntese de voz é produzir fala humana de forma artificial. O tipo mais comum é o <b>TTS</b>: o sistema recebe um texto e devolve o áudio da fala, sem que alguém precise gravá-lo. O laboratório abaixo faz exatamente isso, usando as vozes do seu navegador e do seu sistema.</p>
+      <h3>Como o texto vira fala</h3>
+      <ol class="chain">
+        <li><b>Normalização</b><span>números, siglas e abreviações viram palavras por extenso</span></li>
+        <li><b>Fonemas</b><span>as letras são convertidas nos sons que devem ser pronunciados; fonema é a menor unidade de som que distingue palavras</span></li>
+        <li><b>Prosódia</b><span>ritmo, entonação, pausas e acentuação são definidos, e é isso que diferencia uma pergunta de uma afirmação</span></li>
+        <li><b>Geração do áudio</b><span>a voz é produzida a partir desses dados, usando um dos métodos abaixo</span></li>
+      </ol>
+      <h3>O que dá para modificar</h3>
+      <p>No laboratório, a <b>velocidade</b> altera o ritmo da fala, o <b>tom</b> (pitch) deixa a voz mais grave ou mais aguda, e é a mesma ideia de frequência que você viu no som digital, e a <b>voz</b> escolhe o modelo e o idioma. A <b>prosódia</b>, por sua vez, vem do próprio texto: pontuação e pausas mudam a entonação.</p>
+    </div>
+    <div id="tts" class="lab" data-r>
+      <div class="lab-head"><span>Laboratório de voz</span><span class="state"><i class="dot"></i><b id="state">Em espera</b></span></div>
+      <div class="lab-grid">
+        <div class="lab-in">
+          <label class="lbl" for="text">Texto</label>
+          <textarea id="text" rows="4">Olá! Esta voz foi sintetizada pelo seu navegador.</textarea>
+          <div class="ctrls">
+            <label>Voz <select id="voice"></select></label>
+            <label>Velocidade <input id="rate" type="range" min="0.5" max="2" step="0.1" value="1"><output>1</output></label>
+            <label>Tom <input id="pitch" type="range" min="0" max="2" step="0.1" value="1"><output>1</output></label>
+          </div>
+          <div class="row"><button class="btn" id="speak">Falar</button><button class="btn ghost" id="stop">Parar</button></div>
+        </div>
+        <div class="lab-out">
+          <span class="lbl">Resultado</span>
+          <svg id="lw" class="lw" viewBox="0 0 600 90" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+          <div class="eq small" aria-hidden="true"></div>
+          <p id="tts-msg" class="note">Usa a Web Speech API; as vozes disponíveis dependem do navegador e do sistema.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cmp" data-r>
+      <h3>Compare com a voz real</h3>
+      <p>Ouça a gravação de um integrante do grupo e compare com a voz do laboratório.</p>
+      <table><tr><th></th><th>Voz humana</th><th>Voz sintetizada</th></tr><tr><td>Origem</td><td>Pregas vocais e trato vocal</td><td>Calculada ou montada por software</td></tr><tr><td>Expressão</td><td>Natural, com emoção</td><td>Já foi muito uniforme e melhorou com redes neurais</td></tr><tr><td>Texto novo</td><td>Precisa ser gravado</td><td>Gerada na hora para qualquer texto</td></tr><tr><td>Formato</td><td>Áudio digitalizado, como a gravação abaixo</td><td>Gerada pelo sistema a cada pedido</td></tr></table>
+      <figure class="slot"None data-media="audio" data-src="assets/audio/audio-editado.wav" data-caption="Áudio digitalizado: gravação da voz de um integrante do grupo (versão editada), para comparar com a voz sintetizada."></figure>
+    </div>
+    <div class="prose">
+      <h3>Métodos de síntese de voz</h3>
+      <table><tr><th>Método</th><th>Como funciona</th><th>Característica</th></tr><tr><td>Formantes</td><td>Cria a voz com regras sobre as frequências do trato vocal</td><td>Voz robótica, mas com pouco uso de memória</td></tr><tr><td>Concatenativa</td><td>Junta pedaços de gravações reais</td><td>Soa natural, mas limitada às gravações</td></tr><tr><td>Neural</td><td>Aprende a falar a partir de muitas gravações</td><td>Voz muito natural, usada nos assistentes atuais</td></tr></table>
+    </div>
+  </div>
+</section>
+
+<section id="aplicacoes">
+  <div class="wrap">
+    <div class="ch" data-r><h2>Aplicações</h2><i class="rule"></i></div>
+    <p class="lead">Música e voz sintetizadas estão em quase todo produto multimídia.</p>
+    <ul class="uses">
+      <li><h3>Jogos</h3><p>Trilhas em MIDI ou sintetizadas ocupam pouco espaço e podem mudar conforme a ação do jogador, e vozes sintéticas geram falas na hora.</p></li>
+      <li><h3>Cinema</h3><p>Sintetizadores criam trilhas e efeitos, e vozes sintéticas ajudam em narração e dublagem.</p></li>
+      <li><h3>Produção musical</h3><p>Sintetizadores e MIDI conectam teclados e computadores e permitem editar notas e trocar timbres depois de gravar.</p></li>
+      <li><h3>Assistentes virtuais</h3><p>Transformam texto em fala para responder ao usuário por voz.</p></li>
+      <li><h3>GPS e navegação</h3><p>Falam as instruções do trajeto, inclusive nomes de ruas novos, para o motorista não tirar os olhos da via.</p></li>
+      <li><h3>Acessibilidade</h3><p>Leitores de tela falam o conteúdo para pessoas cegas ou com baixa visão.</p></li>
+      <li><h3>Educação</h3><p>Aplicativos de idiomas, audiolivros e cursos usam voz sintetizada, e a música sintetizada dá clima a materiais didáticos.</p></li>
+      <li><h3>Sistemas multimídia</h3><p>Combinam texto, imagem, som, vídeo e animação. A música e a voz sintetizadas dão trilha e narração com pouco espaço e fáceis de atualizar, como neste site.</p></li>
+    </ul>
+    <figure class="slot" data-r data-media="video" data-src="assets/video/video-voz-sintetizada.mp4" data-caption="Vídeo: integrante do grupo explicando o que é voz sintetizada."></figure>
+  </div>
+</section>
+
+<section id="galeria" class="band">
+  <div class="wrap">
+    <div class="ch" data-r><h2>Mídias do projeto</h2><i class="rule"></i></div>
+    <p class="lead">Seis tipos de mídia usados para demonstrar música e voz sintetizadas. Cada uma tem uma função no ensino. O status muda quando o arquivo é informado no <code>data-src</code>.</p>
+    <div id="gal" class="gal"></div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="wrap">
+    <div class="ch" data-r><h2>Quiz</h2><i class="rule"></i></div>
+    <p class="lead">Cinco perguntas sorteadas a cada tentativa.</p>
+    <div id="quiz-box" class="qbox" data-r></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="f-row">
+      <b>SinteSom</b>
+      <span>Música e Voz Sintetizadas para Sistemas Multimídia</span>
+    </div>
+
+    <div class="f-row">
+      <span>Grupo: Allan Felipe Aguiar Araújo - 01731530; Davi Lopes de Melo - 01730826; Emanuel Roberto Feliciano Vieira - 01752260; João Henrique da Silva Lima - 01696493; João Henrique Moura Freitas - 01722388</span>
+      <span>Disciplina: Sistemas Multimídia</span>
+      <span>Instituição: UNINASSAU</span>
+      <span>Professor: Leopoldo Rodrigues Franca Neto</span>
+    </div>
+
+    <div class="f-row">
+      <span>Ferramentas: HTML, CSS, JavaScript, Ibis Paint e BandLab</span>
+      <span>Autoria dos materiais: Produção própria do grupo</span>
+      <span>Referências: Web APIs, ferramentas utilizadas no projeto e "In the End", de terceiros</span>
+    </div>
+
+    <div class="f-row copy">
+      <span>© 2026 — SinteSom</span>
+    </div>
+  </div>
+</footer>
+<script src="js/midi-player.js"></script>
+<script src="js/app.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
